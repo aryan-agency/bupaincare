@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { Bone, Vertebrae, Activity, Heart, Dumbbell } from "lucide-react";
+import { Bone, Activity, Heart, Dumbbell, Spine } from "lucide-react";
 import WhatsAppButton from "./WhatsAppButton";
-
-// Vertebrae doesn't exist in lucide, use a workaround
-import { Radius } from "lucide-react";
 
 const conditions = [
   { icon: Bone, title: "Knee Osteoarthritis", desc: "Non-surgical relief from chronic knee pain with targeted therapy and regenerative techniques." },
