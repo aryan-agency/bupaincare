@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bone, Activity, Heart, Dumbbell, Spine } from "lucide-react";
+import { Bone, Activity, Heart, Dumbbell, Spline } from "lucide-react";
 import WhatsAppButton from "./WhatsAppButton";
 
 const conditions = [
