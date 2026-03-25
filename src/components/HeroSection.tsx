@@ -12,7 +12,7 @@ const HeroSection = () => (
 
     <div className="container mx-auto relative z-10 py-32 md:py-40">
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
-        <img src={logo} alt="BU PainCare Clinic" className="h-16 md:h-20 w-auto mb-8" />
+        <img src={logo} alt="BU PainCare Clinic" className="h-28 md:h-36 lg:h-44 w-auto mb-10 drop-shadow-lg" />
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           {[{ icon: ShieldCheck, text: "Safe" }, { icon: Leaf, text: "Non-Invasive" }, { icon: Award, text: "Certified" }].map((b) => (
