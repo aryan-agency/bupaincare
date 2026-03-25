@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import FloatingCallButton from "@/components/FloatingCallButton";
 
 const Index = () => (
   <>
@@ -29,6 +30,7 @@ const Index = () => (
     </main>
     <Footer />
     <FloatingWhatsApp />
+    <FloatingCallButton />
   </>
 );
 
