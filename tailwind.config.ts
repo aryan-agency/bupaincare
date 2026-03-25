@@ -51,14 +51,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+          dark: "hsl(var(--coral-dark))",
         },
-        "blue-accent": {
-          DEFAULT: "hsl(var(--blue-accent))",
+        blue: {
+          DEFAULT: "hsl(var(--blue))",
           light: "hsl(var(--blue-light))",
+          dark: "hsl(var(--blue-dark))",
+        },
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          light: "hsl(var(--orange-light))",
         },
         surface: {
           DEFAULT: "hsl(var(--surface))",
@@ -91,7 +96,7 @@ export default {
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
+          "50%": { transform: "translateY(-6px)" },
         },
       },
       animation: {
