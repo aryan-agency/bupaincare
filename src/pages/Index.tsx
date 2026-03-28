@@ -8,6 +8,7 @@ import ProcessSection from "@/components/ProcessSection";
 import CorporateSection from "@/components/CorporateSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
+import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -26,6 +27,7 @@ const Index = () => (
       <CorporateSection />
       <TestimonialsSection />
       <ContactSection />
+      <FAQSection />
       <FinalCTA />
     </main>
     <Footer />
