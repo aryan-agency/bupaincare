@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
 import logo from "@/assets/logo.jpeg";
+import { Phone } from "lucide-react";
+import { CALL_URL } from "@/lib/constants";
 
 const FinalCTA = () => (
   <section className="section-padding bg-primary/5">
@@ -15,7 +17,9 @@ const FinalCTA = () => (
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <WhatsAppButton variant="primary">Book Your Consultation Now</WhatsAppButton>
-          <WhatsAppButton variant="outline">Talk to Our Team</WhatsAppButton>
+          <a href={CALL_URL} className="inline-flex items-center gap-2 font-body font-bold rounded-xl transition-all duration-300 cursor-pointer border-2 border-primary text-primary hover:bg-primary/10 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg">
+            <Phone className="w-5 h-5" /> Talk to Our Team
+          </a>
         </div>
       </motion.div>
     </div>
