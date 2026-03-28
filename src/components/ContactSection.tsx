@@ -12,7 +12,7 @@ const ContactSection = () => (
       <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
           {[
-            { icon: Phone, label: "Phone", value: "+91 98112 43334 / +91 95996 75996" },
+            { icon: Phone, label: "Phone", value: "+91 99997 37292" },
             { icon: Mail, label: "Email", value: "info@bupaincare.com" },
             { icon: MapPin, label: "Address", value: "E-353, Ramesh Nagar, New Delhi – 110015" },
             { icon: Clock, label: "Hours", value: "Mon – Sat: 9 AM – 7 PM" },
