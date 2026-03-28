@@ -18,8 +18,8 @@ const AboutSection = () => (
           <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
             We don't believe in temporary fixes. Every patient receives a personalized treatment plan rooted in root-cause analysis, advanced physiotherapy, and evidence-based alternative wellness techniques.
           </p>
-          <div className="grid grid-cols-3 gap-6">
-            {[{ num: "15+", label: "Years Experience" }, { num: "10K+", label: "Patients Treated" }, { num: "95%", label: "Recovery Rate" }].map((s) => (
+          <div className="grid grid-cols-2 gap-8 max-w-xs">
+            {[{ num: "500+", label: "Patients Treated" }, { num: "95%", label: "Recovery Rate" }].map((s) => (
               <div key={s.label} className="text-center md:text-left">
                 <div className="text-2xl md:text-3xl font-display font-bold text-primary">{s.num}</div>
                 <div className="text-sm text-muted-foreground mt-1 font-body font-medium">{s.label}</div>
