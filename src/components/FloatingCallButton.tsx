@@ -1,8 +1,9 @@
 import { Phone } from "lucide-react";
+import { CALL_URL } from "@/lib/constants";
 
 const FloatingCallButton = () => (
   <a
-    href="tel:+919999737292"
+    href={CALL_URL}
     className="fixed bottom-24 right-6 z-50 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform group"
     aria-label="Call Now"
   >
