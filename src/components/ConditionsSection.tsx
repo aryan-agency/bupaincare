@@ -6,7 +6,7 @@ const conditions = [
   { icon: Bone, title: "Knee Osteoarthritis", desc: "Non-surgical relief from chronic knee pain with targeted therapy and regenerative techniques." },
   { icon: Spline, title: "Cervical Spondylitis", desc: "Advanced treatment for neck pain, stiffness, and nerve compression without surgery." },
   { icon: Activity, title: "Lumbar Spondylitis", desc: "Root-cause diagnosis and therapy for lower back pain and spinal degeneration." },
-  { icon: Heart, title: "Varicose Veins", desc: "Minimally invasive treatments that restore circulation and reduce visible veins." },
+  { icon: Heart, title: "Varicose Veins", desc: "Advanced non-surgical treatment for varicose veins with faster recovery and long-lasting results." },
   { icon: Dumbbell, title: "Muscle Weakness", desc: "Personalized rehabilitation programs to rebuild strength and restore mobility." },
 ];
 
