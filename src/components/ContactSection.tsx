@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { PHONE_DISPLAY } from "@/lib/constants";
 
 const ContactSection = () => (
   <section id="contact" className="section-padding bg-card">
@@ -12,9 +13,9 @@ const ContactSection = () => (
       <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
           {[
-            { icon: Phone, label: "Phone", value: "+91 8287995665" },
+            { icon: Phone, label: "Phone", value: PHONE_DISPLAY },
             { icon: Mail, label: "Email", value: "info@bupaincare.com" },
-            { icon: MapPin, label: "Address", value: "E-353, Ramesh Nagar, New Delhi – 110015" },
+            { icon: MapPin, label: "Address", value: "H-29 1ST FLOOR, BLK-H BALI NAGAR, LANDMARK OPPOSITE HDFC BANK, NEW DELHI-110015" },
             { icon: Clock, label: "Hours", value: "Mon – Sat: 9 AM – 7 PM" },
           ].map((item) => (
             <div key={item.label} className="flex gap-4 items-start">
