@@ -1,0 +1,67 @@
+.franchise-popup {
+  position: fixed;
+  inset: 0;
+  width: min(560px, calc(100vw - 32px), calc(100dvh - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 20%);
+  opacity: 1;
+  animation: franchise-popup-enter 180ms ease-out;
+  transition: opacity 180ms ease-out;
+}
+
+.franchise-popup::backdrop {
+  background: rgb(0 0 0 / 40%);
+  animation: franchise-popup-enter 180ms ease-out;
+  transition: opacity 180ms ease-out;
+}
+
+.franchise-popup--closing,
+.franchise-popup--closing::backdrop {
+  opacity: 0;
+}
+
+.franchise-popup img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.franchise-popup button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 95%);
+  color: #222;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.franchise-popup button:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: -4px;
+}
+
+@keyframes franchise-popup-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .franchise-popup,
+  .franchise-popup::backdrop {
+    animation: none;
+    transition: none;
+  }
+}
