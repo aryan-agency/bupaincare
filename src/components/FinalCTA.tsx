@@ -1,24 +1,41 @@
 import { motion } from "framer-motion";
 import WhatsAppButton from "./WhatsAppButton";
+import heroImg from "@/assets/hero-clinic.jpg";
 import logo from "@/assets/logo.jpeg";
-import { Phone } from "lucide-react";
+import { ShieldCheck, Leaf, Award, Phone } from "lucide-react";
 import { CALL_URL } from "@/lib/constants";
 
-const FinalCTA = () => (
-  <section className="section-padding bg-primary/5">
-    <div className="container mx-auto text-center">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto">
-        <img src={logo} alt="BU PainCare Clinic" className="h-14 md:h-16 w-auto mx-auto mb-8" />
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-foreground">
-          Stop Living With Pain.<br /><span className="text-primary">Start Living Fully.</span>
-        </h2>
-        <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-medium">
-          Take the first step toward a pain-free life. Our experts are ready to help you recover — permanently.
+const HeroSection = () => (
+  <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <div className="absolute inset-0">
+      <img src={heroImg} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar treatment room" width={1920} height={1080} className="w-full h-full object-cover opacity-15" />
+    </div>
+
+    <div className="container mx-auto relative z-10 py-32 md:py-40">
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
+        <img src={logo} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar" className="h-28 md:h-36 lg:h-44 w-auto mb-10 drop-shadow-lg" />
+
+        <div className="flex flex-wrap items-center gap-3 mb-6">
+          {[{ icon: ShieldCheck, text: "Safe" }, { icon: Leaf, text: "Non-Invasive" }, { icon: Award, text: "Certified" }].map((b) => (
+            <span key={b.text} className="inline-flex items-center gap-1.5 text-sm font-body font-semibold text-primary border-2 border-primary/30 rounded-full px-4 py-1.5 bg-primary/5">
+              <b.icon className="w-4 h-4" /> {b.text}
+            </span>
+          ))}
+        </div>
+
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+          Pain-Free Living Starts With{" "}
+          <span className="text-primary">Precision Diagnosis</span>
+        </h1>
+
+        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed font-medium">
+          Advanced non-surgical treatments that address the root cause — not just the symptoms. Experience long-term recovery guided by expert care.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <WhatsAppButton variant="primary">Book Your Consultation Now</WhatsAppButton>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <WhatsAppButton variant="primary">Book Consultation</WhatsAppButton>
           <a href={CALL_URL} className="inline-flex items-center gap-2 font-body font-bold rounded-xl transition-all duration-300 cursor-pointer border-2 border-primary text-primary hover:bg-primary/10 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg">
-            <Phone className="w-5 h-5" /> Talk to Our Team
+            <Phone className="w-5 h-5" /> Call Now — Let's Talk
           </a>
         </div>
       </motion.div>
@@ -26,4 +43,4 @@ const FinalCTA = () => (
   </section>
 );
 
-export default FinalCTA;
+export default HeroSection;

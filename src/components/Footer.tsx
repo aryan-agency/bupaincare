@@ -1,38 +1,58 @@
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import WhatsAppButton from "./WhatsAppButton";
 import logo from "@/assets/logo.jpeg";
 
-const Footer = () => (
-  <footer className="border-t-2 border-border py-8 px-4 bg-background">
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base text-muted-foreground font-body">
-      <img src={logo} alt="BU PainCare Clinic" className="h-10 w-auto" />
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-      <div className="flex flex-col items-center md:items-end gap-2">
-        <span className="font-medium">
-          © {new Date().getFullYear()} BU PainCare Clinic. All rights reserved.
-        </span>
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-        <div className="text-sm text-white/60">
-          Built by{" "}
-          <a
-            href="https://aryansrivastav.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-cyan-400 transition-colors"
-          >
-            Aryan Srivastav
-          </a>{" "}
-          —{" "}
-          <a
-            href="https://theariseai.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-cyan-400 transition-colors"
-          >
-            Arise AI
-          </a>
+  const links = [
+    { label: "About", href: "#about" },
+    { label: "Conditions", href: "#conditions" },
+    { label: "Results", href: "#results" },
+    { label: "Process", href: "#process" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-border shadow-sm" : "bg-background"}`}>
+      <div className="container mx-auto flex items-center justify-between py-3">
+        <a href="#" className="shrink-0">
+          <img src={logo} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar" className="h-12 md:h-14 w-auto" />
+        </a>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="text-base font-body font-medium text-foreground/70 hover:text-primary transition-colors">{l.label}</a>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <WhatsAppButton variant="primary">Book Consultation</WhatsAppButton>
         </div>
-      </div>
-    </div>
-  </footer>
-);
 
-export default Footer;
+        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-t border-border px-4 pb-4 space-y-3">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-2 text-base font-body font-medium text-foreground/70 hover:text-primary">{l.label}</a>
+          ))}
+          <WhatsAppButton variant="primary" className="w-full justify-center">Book Consultation</WhatsAppButton>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
