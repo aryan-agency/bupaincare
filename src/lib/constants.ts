@@ -11,7 +11,6 @@ export default function FranchisePopup() {
   useEffect(() => {
     const element = dialog.current;
     element?.showModal();
-    // Include the exit transition in the four-second lifetime.
     const fadeTimer = setTimeout(() => setClosing(true), 3820);
     const closeTimer = setTimeout(() => setVisible(false), 4000);
     return () => {

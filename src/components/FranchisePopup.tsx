@@ -15,7 +15,7 @@ const ContactSection = () => (
           {[
             { icon: Phone, label: "Phone", value: PHONE_DISPLAY },
             { icon: Mail, label: "Email", value: "info@bupaincare.com" },
-            { icon: MapPin, label: "Address", value: "H-29 1ST FLOOR, BLK-H BALI NAGAR LANDMARK OPPOSITE HDFC BANK NEW DELHi-110015" },
+            { icon: MapPin, label: "Address", value: "Address: H-29 1ST FLOOR, BLK-H BALI NAGAR LANDMARK OPPOSITE HDFC BANK NEW DELHi-110015" },
             { icon: Clock, label: "Hours", value: "Mon – Sat: 9 AM – 7 PM" },
           ].map((item) => (
             <div key={item.label} className="flex gap-4 items-start">
