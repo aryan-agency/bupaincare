@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://eclectic-beignet-da1ec2.netlify.app/sitemap.xml

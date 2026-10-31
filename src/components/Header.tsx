@@ -1,25 +1,59 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar | Pain Relief & Physiotherapy in Delhi</title>
-    <meta name="description" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar offers expert physiotherapy, naturopathy, and pain relief care in Bali Nagar, New Delhi.">
-    <meta name="author" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar" />
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import WhatsAppButton from "./WhatsAppButton";
+import logo from "@/assets/logo.jpeg";
 
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39de1ddb-f050-4154-b278-ff46cc0f6be8/id-preview-56a837b0--cdc9fbc4-6b37-41be-aa7c-17e25c6e397f.lovable.app-1774365027193.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39de1ddb-f050-4154-b278-ff46cc0f6be8/id-preview-56a837b0--cdc9fbc4-6b37-41be-aa7c-17e25c6e397f.lovable.app-1774365027193.png">
-    <meta property="og:title" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar | Pain Relief & Physiotherapy in Delhi">
-    <meta name="twitter:title" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar | Pain Relief & Physiotherapy in Delhi">
-    <meta property="og:description" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar offers expert physiotherapy, naturopathy, and pain relief care in Bali Nagar, New Delhi.">
-    <meta name="twitter:description" content="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar offers expert physiotherapy, naturopathy, and pain relief care in Bali Nagar, New Delhi.">
-  </head>
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const links = [
+    { label: "About", href: "#about" },
+    { label: "Conditions", href: "#conditions" },
+    { label: "Results", href: "#results" },
+    { label: "Process", href: "#process" },
+    { label: "Contact", href: "#contact" },
+    { label: "Clinic Update", href: "/blog/bu-pain-care-clinic-bali-nagar-delhi-new-address/" },
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-border shadow-sm" : "bg-background"}`}>
+      <div className="container mx-auto flex items-center justify-between py-3">
+        <a href="#" className="shrink-0">
+          <img src={logo} alt="BU Pain Care Clinic" className="h-12 md:h-14 w-auto" />
+        </a>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="text-base font-body font-medium text-foreground/70 hover:text-primary transition-colors">{l.label}</a>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <WhatsAppButton variant="primary">Book Consultation</WhatsAppButton>
+        </div>
+
+        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-t border-border px-4 pb-4 space-y-3">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-2 text-base font-body font-medium text-foreground/70 hover:text-primary">{l.label}</a>
+          ))}
+          <WhatsAppButton variant="primary" className="w-full justify-center">Book Consultation</WhatsAppButton>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
