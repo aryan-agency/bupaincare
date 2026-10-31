@@ -3,11 +3,11 @@ import logo from "@/assets/logo.jpeg";
 const Footer = () => (
   <footer className="border-t-2 border-border py-8 px-4 bg-background">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base text-muted-foreground font-body">
-      <img src={logo} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar" className="h-10 w-auto" />
+      <img src={logo} alt="BU Pain Care Clinic" className="h-10 w-auto" />
 
       <div className="flex flex-col items-center md:items-end gap-2">
         <span className="font-medium">
-          © {new Date().getFullYear()} BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar. All rights reserved.
+          © {new Date().getFullYear()} BU Pain Care Clinic. All rights reserved.
         </span>
 
         <div className="text-sm text-white/60">

@@ -8,12 +8,12 @@ import { CALL_URL } from "@/lib/constants";
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
     <div className="absolute inset-0">
-      <img src={heroImg} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar treatment room" width={1920} height={1080} className="w-full h-full object-cover opacity-15" />
+      <img src={heroImg} alt="BU Pain Care Clinic treatment room" width={1920} height={1080} className="w-full h-full object-cover opacity-15" />
     </div>
 
     <div className="container mx-auto relative z-10 py-32 md:py-40">
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
-        <img src={logo} alt="BU Pain Care - Naturopathy & Physiotherapy Clinic Bali Nagar" className="h-28 md:h-36 lg:h-44 w-auto mb-10 drop-shadow-lg" />
+        <img src={logo} alt="BU Pain Care Clinic" className="h-28 md:h-36 lg:h-44 w-auto mb-10 drop-shadow-lg" />
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           {[{ icon: ShieldCheck, text: "Safe" }, { icon: Leaf, text: "Non-Invasive" }, { icon: Award, text: "Certified" }].map((b) => (
