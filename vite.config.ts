@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: path.resolve(__dirname, "index.html"),
         relocation: path.resolve(__dirname, "blog/bu-pain-care-clinic-bali-nagar-delhi-new-address/index.html"),
+        kneePain: path.resolve(__dirname, "blog/knee-pain-treatment-in-bali-nagar-delhi-causes-symptoms-effective-pain-management/index.html"),
       },
     },
   },
